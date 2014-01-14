@@ -14,8 +14,6 @@
 
 package com.liferay.tool.datamanipulator.datatype.documenlibrary;
 
-import java.io.File;
-
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portlet.documentlibrary.model.DLFileEntry;
@@ -29,12 +27,14 @@ import com.liferay.tool.datamanipulator.model.DataManipulator;
 import com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor;
 import com.liferay.tool.datamanipulator.service.DataManipulatorLocalServiceUtil;
 
+import java.io.File;
+
 /**
  * @author Tibor Kovács
  *
  */
 public class DocumentLibraryFileHandler extends AbstractEntryHandler
-		implements EntryHandlerModel {
+	implements EntryHandlerModel {
 
 	/**
 	 * @param count
@@ -44,7 +44,7 @@ public class DocumentLibraryFileHandler extends AbstractEntryHandler
 	 * @param baseEntry
 	 * @param subEntryHandler
 	 * @param requestProcessor
-	 * @throws SystemException 
+	 * @throws SystemException
 	 */
 	public DocumentLibraryFileHandler(
 			int count, int update, int depth, int subCount, BaseEntry baseEntry,
@@ -62,6 +62,7 @@ public class DocumentLibraryFileHandler extends AbstractEntryHandler
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getCreateEntryArgs(long, java.lang.String, com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public EntryArgs getCreateEntryArgs(
 			long parentId, String postString, RequestProcessor requestProcessor)
@@ -83,6 +84,7 @@ public class DocumentLibraryFileHandler extends AbstractEntryHandler
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getDataManipulatorFromObject(java.lang.Object)
 	 */
+
 	@Override
 	public DataManipulator getDataManipulatorFromObject(Object createdEntry)
 		throws PortalException, SystemException {
@@ -96,6 +98,7 @@ public class DocumentLibraryFileHandler extends AbstractEntryHandler
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getUpdateEntryArgs(long, java.lang.String, com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public EntryArgs getUpdateEntryArgs(
 			long entryId, String postString, RequestProcessor requestProcessor)
