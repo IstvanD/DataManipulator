@@ -31,6 +31,8 @@ import com.liferay.tool.datamanipulator.model.DataManipulator;
  */
 public class DataManipulatorImpl extends DataManipulatorModelImpl
 	implements DataManipulator {
+
 	public DataManipulatorImpl() {
 	}
+
 }
