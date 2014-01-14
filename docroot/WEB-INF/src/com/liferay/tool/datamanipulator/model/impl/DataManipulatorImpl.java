@@ -27,11 +27,13 @@ import com.liferay.tool.datamanipulator.model.DataManipulator;
  */
 public class DataManipulatorImpl extends DataManipulatorModelImpl
 	implements DataManipulator {
-	/*
+
+	/**
 	 * NOTE FOR DEVELOPERS:
 	 *
 	 * Never reference this class directly. All methods that expect a data manipulator model instance should use the {@link DataManipulator} interface instead.
 	 */
 	public DataManipulatorImpl() {
 	}
+
 }
