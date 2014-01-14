@@ -36,15 +36,14 @@ import com.liferay.tool.datamanipulator.service.DataManipulatorLocalServiceUtil;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 /**
  * @author Tibor Kovács
  *
  */
-public class JournalArticleHandler extends AbstractEntryHandler implements
-		EntryHandlerModel {
+public class JournalArticleHandler extends AbstractEntryHandler
+	implements EntryHandlerModel {
 
 	/**
 	 * @param count
@@ -90,6 +89,7 @@ public class JournalArticleHandler extends AbstractEntryHandler implements
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getCreateEntryArgs(long, java.lang.String, com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public EntryArgs getCreateEntryArgs(
 			long parentId, String postString, RequestProcessor requestProcessor)
@@ -110,6 +110,7 @@ public class JournalArticleHandler extends AbstractEntryHandler implements
 
 		String structureId = StringPool.BLANK;
 		String templateId = StringPool.BLANK;
+
 		if (_structures.size() > 0) {
 			int index = EntryUtil.nextInt(_structures.size());
 
@@ -198,6 +199,7 @@ public class JournalArticleHandler extends AbstractEntryHandler implements
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getDataManipulatorFromObject(java.lang.Object)
 	 */
+
 	@Override
 	public DataManipulator getDataManipulatorFromObject(Object createdEntry)
 		throws PortalException, SystemException {
@@ -211,6 +213,7 @@ public class JournalArticleHandler extends AbstractEntryHandler implements
 	/* (non-Javadoc)
 	 * @see com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel#getUpdateEntryArgs(long, java.lang.String, com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor)
 	 */
+
 	@Override
 	public EntryArgs getUpdateEntryArgs(
 			long entryId, String postString, RequestProcessor requestProcessor)
@@ -299,16 +302,12 @@ public class JournalArticleHandler extends AbstractEntryHandler implements
 	}
 
 	private String _articleURL;
-
 	private Calendar _displayDateFrom;
 	private Calendar _displayDateTo;
-
 	private Calendar _expirationDateFrom;
 	private Calendar _expirationDateTo;
-
 	private Calendar _reviewDateFrom;
 	private Calendar _reviewDateTo;
-
 	private List<JournalStructure> _structures;
 
 }
