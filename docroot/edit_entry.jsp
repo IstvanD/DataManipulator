@@ -1,6 +1,6 @@
 <%--
 /**
- * Copyright (c) 2000-2012 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-2010 Liferay, Inc. All rights reserved.
  *
  * The contents of this file are subject to the terms of the Liferay Enterprise
  * Subscription License ("License"). You may not use this file except in
@@ -12,7 +12,7 @@
  *
  *
  */
- --%>
+--%>
 
 <%@ page import="com.liferay.tool.datamanipulator.datatype.EntryDisplayFieldsFactory"%>
 <%@ page import="com.liferay.tool.datamanipulator.handler.entryhandler.model.EntryHandlerModel"%>
