@@ -33,10 +33,10 @@ import com.liferay.tool.datamanipulator.requestprocessor.RequestProcessor;
  *
  */
 public abstract class AbstractEntryHandler implements EntryHandlerModel {
+
 	public AbstractEntryHandler(
 		int count, int update, int depth, int subCount, BaseEntry baseEntry,
-		EntryHandlerModel subEntryHandler,
-		RequestProcessor requestProcessor) {
+		EntryHandlerModel subEntryHandler, RequestProcessor requestProcessor) {
 
 		_baseEntry = baseEntry;
 		_count = count;
@@ -77,6 +77,7 @@ public abstract class AbstractEntryHandler implements EntryHandlerModel {
 		throws PortalException, SystemException {
 
 		// TODO Auto-generated method stub
+
 	}
 
 	@Override
@@ -114,7 +115,7 @@ public abstract class AbstractEntryHandler implements EntryHandlerModel {
 				dataM = getDataManipulatorFromObject(entry);
 			}
 			catch (Exception e) {
-				if (!isDuplicateException(e)) {
+				if (!_isDuplicateException(e)) {
 					if (e instanceof PortalException) {
 						throw new PortalException(e);
 					}
@@ -146,7 +147,7 @@ public abstract class AbstractEntryHandler implements EntryHandlerModel {
 					_baseEntry.updateEntry(args);
 				}
 				catch (Exception e) {
-					if (!isDuplicateException(e)) {
+					if (!_isDuplicateException(e)) {
 						if (e instanceof PortalException) {
 							throw new PortalException(e);
 						}
@@ -182,7 +183,7 @@ public abstract class AbstractEntryHandler implements EntryHandlerModel {
 		}
 	}
 
-	private static boolean isDuplicateException(Exception e) {
+	private static boolean _isDuplicateException(Exception e) {
 		Exception eCause = e;
 
 		int k = 0;
@@ -192,7 +193,7 @@ public abstract class AbstractEntryHandler implements EntryHandlerModel {
 
 			if (exceptionString.contains("Duplicate") ||
 				(Validator.isNotNull(exceptionMessage) &&
-				exceptionMessage.contains("already exists"))) {
+				 exceptionMessage.contains("already exists"))) {
 
 				return true;
 			}
@@ -214,9 +215,9 @@ public abstract class AbstractEntryHandler implements EntryHandlerModel {
 	private BaseEntry _baseEntry;
 	private int _count;
 	private int _depth;
-	private EntryHandlerModel _subEntryHandler;
 	private RequestProcessor _requestProcessor;
 	private int _subCount;
+	private EntryHandlerModel _subEntryHandler;
 	private int _update;
 
 }
