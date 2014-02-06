@@ -17,7 +17,6 @@ package com.liferay.tool.datamanipulator.datatype.user;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.StringPool;
-import com.liferay.portal.model.Group;
 import com.liferay.portal.model.User;
 import com.liferay.tool.datamanipulator.entry.BaseEntry;
 import com.liferay.tool.datamanipulator.entry.EntryArgs;
@@ -101,10 +100,8 @@ public class UserEntryHandler extends AbstractEntryHandler
 	public DataManipulator getDataManipulatorFromObject(Object createdEntry)
 		throws PortalException, SystemException {
 
-		Group group = ((User)createdEntry).getGroup();
-
 		return DataManipulatorLocalServiceUtil.addDataManipulator(
-			group.getGroupId(), User.class.getName(),
+			((User)createdEntry).getCompanyId(), User.class.getName(),
 			((User)createdEntry).getUserId());
 	}
 
