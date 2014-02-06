@@ -64,6 +64,8 @@ public class WikiPageHandler extends AbstractEntryHandler
 			long parentId, String postString, RequestProcessor requestProcessor)
 		throws PortalException, SystemException {
 
+		postString += EntryUtil.nextString();
+
 		WikiPage wikiPage = null;
 
 		try {
