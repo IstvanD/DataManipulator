@@ -18,7 +18,7 @@
 
 <%@ page import="java.util.ArrayList" %>
 
-<%@ include file="/init.jsp" %>
+<%@ include file="/html/init.jsp" %>
 
 <%
 List<String> entryTypeNavigation = new ArrayList<String>();
@@ -26,4 +26,4 @@ List<String> entryTypeNavigation = new ArrayList<String>();
 entryTypeNavigation.add(EntryTypeKeys.ENTRY_TYPE_PORTAL);
 %>
 
-<%@ include file="/view_base.jsp" %>
+<%@ include file="/html/view_base.jsp" %>
