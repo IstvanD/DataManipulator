@@ -64,6 +64,8 @@ public class WikiNodeHandler extends AbstractEntryHandler
 			long parentId, String postString, RequestProcessor requestProcessor)
 		throws PortalException, SystemException {
 
+		postString += EntryUtil.nextString();
+
 		String name = "Test Wiki Node" + postString + " Name";
 		name = _changeNumberToChar(name);
 
