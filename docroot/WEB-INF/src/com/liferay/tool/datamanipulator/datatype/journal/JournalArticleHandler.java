@@ -95,6 +95,8 @@ public class JournalArticleHandler extends AbstractEntryHandler
 			long parentId, String postString, RequestProcessor requestProcessor)
 		throws PortalException, SystemException {
 
+		postString += EntryUtil.nextString();
+
 		String articleId = StringPool.BLANK;
 		boolean autoArticleId = EntryUtil.nextBoolean();
 
