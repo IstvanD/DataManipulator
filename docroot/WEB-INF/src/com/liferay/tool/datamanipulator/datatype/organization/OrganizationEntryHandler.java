@@ -19,7 +19,6 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.PropsKeys;
 import com.liferay.portal.kernel.util.PropsUtil;
-import com.liferay.portal.model.Group;
 import com.liferay.portal.model.Organization;
 import com.liferay.portal.model.OrganizationConstants;
 import com.liferay.portal.service.OrganizationLocalServiceUtil;
@@ -95,10 +94,8 @@ public class OrganizationEntryHandler extends AbstractEntryHandler
 		UserLocalServiceUtil.addOrganizationUsers(
 			org.getOrganizationId(), _userIds);
 
-		Group group = org.getGroup();
-
 		return DataManipulatorLocalServiceUtil.addDataManipulator(
-			group.getGroupId(), Organization.class.getName(),
+			org.getCompanyId(), Organization.class.getName(),
 			org.getOrganizationId());
 	}
 
